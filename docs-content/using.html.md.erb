@@ -1,12 +1,45 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using Signal Sciences Service Broker for PCF
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how to use Signal Sciences Service Broker for Pivotal Cloud Foundry (PCF).
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+##<a id='using'></a> Enable the Agent for your App
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. Give procedures for how to perform the different functions offered by your product, and provide screenshots where necessary.** 
+To use the Signal Sciences service with your app, you must first enable the Signal Sciences agent within your app.
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. If you include a Troubleshooting section, follow the Symptom/Explanation format used in the [Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+### Overview
+
+The Signal Sciences Agent does the following:
+
+* Monitors and protects Cloud Foundry apps 
+* Provides attack and anomaly visibility through the [Signal Sciences Dashboard](https://dashboard.signalsciences.net)
+
+### Enable
+
+Follow these steps to enable the Signal Sciences agent for your app:
+
+1. Ensure the `.enable_sigsci_decorator` file is present in the `$BUILD_DIR` of your app.
+
+1. Set the following environment variables of your app using `cf set-env`:
+	* **Required**
+		* `SIGSCI_ACCESSKEYID`
+		* `SIGSCI_SECRETACCESSKEY`
+	* **Optional**
+		* `SIGSCI_REVERSE_PROXY_UPSTREAM`: The default value is `127.0.0.1:8081`.
+		* `SIGSCI_SERVER_HOSTNAME`
+
+##<a id='create-bind'></a> Create and Bind Service Instances
+
+1. You can create service instance using either the Apps Manager UI or the Cloud Foundry Command Line Interface (cf CLI). Refer to the following topics for instructions:
+	* **cf CLI**:
+		* [Create a service instance](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#create)
+	* **Apps Manager**:
+		* [Create a service instance](http://docs.run.pivotal.io/marketplace/use-console.html)
+
+1. Once created, you can bind your app to the service. This can be done either through the cf CLI or the Apps Manager UI:
+	* **cf CLI**:
+	  * [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#bind)
+	* **Apps Manager**:
+	  * [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/console/manage-apps.html#manage-service)
