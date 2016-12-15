@@ -18,28 +18,21 @@ The Signal Sciences Agent does the following:
 
 ### Enable
 
-Follow these steps to enable the Signal Sciences agent for your app:
+Follow the steps outlined below to enable the Signal Sciences agent with your app. All languages and frameworks are supported.
 
-1. Ensure the `.enable_sigsci_decorator` file is present in the `$BUILD_DIR` of your app.
+1. Ensure the `.enable_sigsci_decorator` file is present in the `$BUILD_DIR` of your app. Note, this is just an empty file.
 
 1. Set the following environment variables of your app using `cf set-env`:
 	* **Required**
-		* `SIGSCI_ACCESSKEYID`
-		* `SIGSCI_SECRETACCESSKEY`
+		* Agent keys, which can be obtained from the _Agents_ page in the [Signal Sciences Dashboard] (https://dashboard.signalsciences.net/) 
+			* `SIGSCI_ACCESSKEYID`
+			* `SIGSCI_SECRETACCESSKEY`
 	* **Optional**
-		* `SIGSCI_REVERSE_PROXY_UPSTREAM`: The default value is `127.0.0.1:8081`.
+		* `SIGSCI_REVERSE_PROXY_UPSTREAM` (default value is `127.0.0.1:8081`)
 		* `SIGSCI_SERVER_HOSTNAME`
 
-##<a id='create-bind'></a> Create and Bind Service Instances
+1. Ensure your app process is configured to listen for connections on the `SIGSCI_REVERSE_PROXY_UPSTREAM` IP address and port.
 
-1. You can create service instance using either the Apps Manager UI or the Cloud Foundry Command Line Interface (cf CLI). Refer to the following topics for instructions:
-	* **cf CLI**:
-		* [Create a service instance](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#create)
-	* **Apps Manager**:
-		* [Create a service instance](http://docs.run.pivotal.io/marketplace/use-console.html)
+For more information on agent configuration options see the agent configuration documentation, [https://dashboard.signalsciences.net/documentation/installation/agent-configuration] (https://dashboard.signalsciences.net/documentation/installation/agent-configuration).
 
-1. Once created, you can bind your app to the service. This can be done either through the cf CLI or the Apps Manager UI:
-	* **cf CLI**:
-	  * [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#bind)
-	* **Apps Manager**:
-	  * [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/console/manage-apps.html#manage-service)
+With Signal Sciences enabled, everytime your app is deployed and running you will have visibility into common web attacks and anomalies via the [Signal Sciences Dashboard](https://dashboard.signalsciences.net/). In the Dashboard, you can enable blocking to protect your application from attacks like SQL Injection, Cross-Site Scripting, Directory Traversal, Command Execution, etc. Also, by leveraging Signal Sciences custom signals you can enable visbility and protection over the business risks associated with your app, e.g Account Takeover, High Risk Transactions, Vulnerability Discovery, and Policy Validation.
