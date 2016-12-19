@@ -5,9 +5,9 @@ owner: Partners
 
 This topic describes how to use Signal Sciences Service Broker for Pivotal Cloud Foundry (PCF).
 
-##<a id='using'></a> Enable the Agent for your App
+##<a id='enable-agent'></a> Enable the Agent for Your App
 
-To use the Signal Sciences service with your app, you must first enable the Signal Sciences agent within your app.
+To use the [Signal Sciences](http://signalsciences.com) service with your app, you must first enable the Signal Sciences agent that runs within the app.
 
 ### Overview
 
@@ -24,7 +24,7 @@ Follow the steps outlined below to enable the Signal Sciences agent with your ap
 
 1. Set the following environment variables of your app using `cf set-env`:
 	* **Required**
-		* Agent keys, which can be obtained from the _Agents_ page in the [Signal Sciences Dashboard] (https://dashboard.signalsciences.net/) 
+		* Agent keys, which can be obtained from the *Agents* page in the [Signal Sciences Dashboard] (https://dashboard.signalsciences.net/) 
 			* `SIGSCI_ACCESSKEYID`
 			* `SIGSCI_SECRETACCESSKEY`
 	* **Optional**
@@ -35,4 +35,8 @@ Follow the steps outlined below to enable the Signal Sciences agent with your ap
 
 For more information on agent configuration options see the agent configuration documentation, [https://dashboard.signalsciences.net/documentation/installation/agent-configuration] (https://dashboard.signalsciences.net/documentation/installation/agent-configuration).
 
-With Signal Sciences enabled, everytime your app is deployed and running you will have visibility into common web attacks and anomalies via the [Signal Sciences Dashboard](https://dashboard.signalsciences.net/). In the Dashboard, you can enable blocking to protect your application from attacks like SQL Injection, Cross-Site Scripting, Directory Traversal, Command Execution, etc. Also, by leveraging Signal Sciences custom signals you can enable visbility and protection over the business risks associated with your app, e.g Account Takeover, High Risk Transactions, Vulnerability Discovery, and Policy Validation.
+##<a id='use-dashboard'></a> Use the Signal Sciences Dashboard
+
+With Signal Sciences enabled, every time your app is deployed and running, you will have visibility into common web attacks and anomalies via the [Signal Sciences Dashboard](https://dashboard.signalsciences.net/). 
+
+In the Dashboard, you can enable blocking to protect your application from attacks like SQL Injection, Cross-Site Scripting, Directory Traversal, Command Execution, etc. Also, by leveraging Signal Sciences custom signals you can enable visibility and protection over the business risks associated with your app, e.g Account Takeover, High Risk Transactions, Vulnerability Discovery, and Policy Validation.
