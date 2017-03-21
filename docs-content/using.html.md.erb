@@ -29,7 +29,8 @@ Follow the steps outlined below to enable the Signal Sciences agent with your ap
 			* `SIGSCI_SECRETACCESSKEY`
 	* **Optional**
 		* `SIGSCI_SERVER_HOSTNAME` - Specify a specific hostname for each agent. This is what is deplayed in the Signal Sciences Dashboard UI, and it should be a unqiue name per instance.
-		* `SIGSCI_REQUIRED` - By default, if the Signal Sciences agent fails to start (e.g. invalid agent keys), this will not prevent the application from starting. To ensure your application is not started without Signal Sciences set `SIGSCI_REQUIRED` to `true`.
+		* `SIGSCI_AGENT_VERSION` - By default the latest version of the Signal Sciences agent will be installed. To specify a different version set the `SIGSCI_AGENT_VERSION` enviornment variable to the desired version number.
+		* `SIGSCI_REQUIRED` - By default, if the Signal Sciences agent fails to start (e.g. invalid agent keys), this will not prevent the application from starting. To ensure your application is not started without Signal Sciences set `SIGSCI_REQUIRED` environmetn variable to `true`.
 
 1. Ensure your app process is obtaining its listening port from the `$PORT` environment variable. Typically, this does not require any changes to your application.
 
