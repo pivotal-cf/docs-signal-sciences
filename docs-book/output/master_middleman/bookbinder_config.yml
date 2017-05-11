@@ -3,18 +3,18 @@
   ".": 
 :production_host: hello
 :subnav_templates:
-  myservice: myservice_subnav
+  signalsciences: signalsciences_subnav
 :template_variables: 
-:local_repo_dir: "/Users/ljarzynski/workspace/docs-signal-sciences"
+:local_repo_dir: "/Users/jday/workspace/docs-signal-sciences"
 :workspace: !ruby/object:Pathname
-  path: "/Users/ljarzynski/workspace/docs-signal-sciences/docs-book/output/master_middleman/source"
+  path: "/Users/jday/workspace/docs-signal-sciences/docs-book/output/master_middleman/source"
 :feedback_enabled: 
 :repo_link_enabled: true
 :repo_links:
-  myservice:
+  signalsciences:
     repo: docs-content
     ref: master
     at_path: 
 :product_info:
-  myservice: {}
+  signalsciences: {}
 :elastic_search: false
