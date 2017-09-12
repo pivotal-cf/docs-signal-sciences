@@ -22,6 +22,16 @@ Follow the steps outlined below to enable the Signal Sciences agent with your ap
 
 1. Ensure the `.enable_sigsci_decorator` file is present in the `$BUILD_DIR` of your app. Note, this is just an empty file.
 
+	
+	- For Java based applications, the `.enable_sigsci_decorator` should be added to your application `.jar` file. Example:
+
+	```
+	./gradlew clean assemble
+	touch .enable_sigsci_decorator
+	jar -uvf build/libs/spring-music.jar .enable_sigsci_decorator
+	```
+	
+
 1. Set the following environment variables of your app using `cf set-env`:
 	* **Required**
 		* Agent keys, which can be obtained from the *Agents* page in the [Signal Sciences Dashboard] (https://dashboard.signalsciences.net/) 
