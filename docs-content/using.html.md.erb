@@ -7,7 +7,8 @@ This topic describes how to use Signal Sciences Service Broker for Pivotal Cloud
 
 ##<a id='enable-agent'></a> Enable the Agent for Your App
 
-To use the [Signal Sciences](http://signalsciences.com) service with your app, you must first enable the Signal Sciences agent that runs within the app.
+To use the [Signal Sciences](http://signalsciences.com) service with your app,
+you must first enable the Signal Sciences agent that runs within the app.
 
 ### Overview
 
@@ -20,10 +21,11 @@ The Signal Sciences Agent does the following:
 
 Follow the steps outlined below to enable the Signal Sciences agent with your app. All languages and frameworks are supported.
 
-1. Ensure the `.enable_sigsci_decorator` file is present in the `$BUILD_DIR` of your app. Note, this is just an empty file.
+1. Ensure the `.enable_sigsci_decorator` file is present in the `$BUILD_DIR` of your app.
+   This is just an empty file.
 
 	
-	- For Java based applications, the `.enable_sigsci_decorator` should be added to your application `.jar` file. Example:
+	- For Java-based apps, add the `.enable_sigsci_decorator` to your app JAR file. Example:
 
 	```
 	./gradlew clean assemble
@@ -40,14 +42,20 @@ Follow the steps outlined below to enable the Signal Sciences agent with your ap
 	* **Optional**
 		* `SIGSCI_SERVER_HOSTNAME` - Specify a specific hostname for each agent. This is what is deplayed in the Signal Sciences Dashboard UI, and it should be a unqiue name per instance.
 		* `SIGSCI_AGENT_VERSION` - By default the latest version of the Signal Sciences agent will be installed. To specify a different version set the `SIGSCI_AGENT_VERSION` enviornment variable to the desired version number.
-		* `SIGSCI_REQUIRED` - By default, if the Signal Sciences agent fails to start (e.g. invalid agent keys), this will not prevent the application from starting. To ensure your application is not started without Signal Sciences set `SIGSCI_REQUIRED` environmetn variable to `true`.
+		* `SIGSCI_REQUIRED` - By default, if the Signal Sciences agent fails to start (e.g. invalid agent keys), this will not prevent the app from starting. To ensure your app is not started without Signal Sciences set `SIGSCI_REQUIRED` environmetn variable to `true`.
 
-1. Ensure your app process is obtaining its listening port from the `$PORT` environment variable. Typically, this does not require any changes to your application.
+1. Ensure your app process is obtaining its listening port from the `$PORT` environment variable.
+Typically, this does not require any changes to your app.
 
-For more information on agent configuration options see the agent configuration documentation, [https://dashboard.signalsciences.net/documentation/installation/agent-configuration] (https://dashboard.signalsciences.net/documentation/installation/agent-configuration).
+For more information on agent configuration options, see the agent configuration documentation,
+[https://dashboard.signalsciences.net/documentation/installation/agent-configuration] (https://dashboard.signalsciences.net/documentation/installation/agent-configuration).
 
 ##<a id='use-dashboard'></a> Use the Signal Sciences Dashboard
 
-With Signal Sciences enabled, every time your app is deployed and running, you will have visibility into common web attacks and anomalies via the [Signal Sciences Dashboard](https://dashboard.signalsciences.net/). 
+With Signal Sciences enabled, every time your app is deployed and running,
+you have visibility into common web attacks and anomalies via the [Signal Sciences Dashboard](https://dashboard.signalsciences.net/). 
 
-In the Dashboard, you can enable blocking to protect your application from attacks like SQL Injection, Cross-Site Scripting, Directory Traversal, Command Execution, etc. Also, by leveraging Signal Sciences custom signals you can enable visibility and protection over the business risks associated with your app, e.g Account Takeover, High Risk Transactions, Vulnerability Discovery, and Policy Validation.
+In the Dashboard, you can enable blocking to protect your app from attacks like SQL Injection,
+Cross-Site Scripting, Directory Traversal, Command Execution, etc.
+Also, by leveraging Signal Sciences custom signals you can enable visibility and protection over the business risks associated
+with your app, e.g Account Takeover, High Risk Transactions, Vulnerability Discovery, and Policy Validation.
