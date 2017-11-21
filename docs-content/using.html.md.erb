@@ -37,11 +37,11 @@ Follow the steps outlined below to enable the Signal Sciences agent with your ap
 			* `SIGSCI_ACCESSKEYID`
 			* `SIGSCI_SECRETACCESSKEY`
 	* **Optional**
-		* `SIGSCI_SERVER_HOSTNAME` - Specify a specific hostname for each agent. This is what is deplayed in the Signal Sciences Dashboard UI, and it should be a unique name per instance.
+		* `SIGSCI_SERVER_HOSTNAME` - Specify a specific hostname for each agent. This is what gets displayed in the Signal Sciences Dashboard UI, and it should be a unique name per instance.
 		* `SIGSCI_AGENT_VERSION` - By default the latest version of the Signal Sciences agent will be installed. To specify a different version set the `SIGSCI_AGENT_VERSION` environment variable to the desired version number.
 		* `SIGSCI_REQUIRED` - By default, if the Signal Sciences agent fails to start (e.g. invalid agent keys), this will not prevent the app from starting. To ensure your app is not started without Signal Sciences set `SIGSCI_REQUIRED` environment variable to `true`.
 
-1. Ensure your app process is obtaining its listening port from the `$PORT` environment variable.
+1. Ensure your app process obtains its listening port from the `$PORT` environment variable.
 Typically, this does not require any changes to your app.
 
 For more information on agent configuration options, see the agent configuration documentation,
@@ -55,4 +55,4 @@ you have visibility into common web attacks and anomalies via the [Signal Scienc
 In the Dashboard, you can enable blocking to protect your app from attacks like SQL Injection,
 Cross-Site Scripting, Directory Traversal, Command Execution, etc.
 Also, by leveraging Signal Sciences custom signals you can enable visibility and protection over the business risks associated
-with your app, e.g Account Takeover, High Risk Transactions, Vulnerability Discovery, and Policy Validation.
+with your app, e.g. Account Takeover, High Risk Transactions, Vulnerability Discovery, and Policy Validation.
