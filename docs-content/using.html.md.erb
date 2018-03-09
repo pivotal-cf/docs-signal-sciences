@@ -19,33 +19,21 @@ The Signal Sciences Agent does the following:
 
 ### Enable
 
-Follow the steps outlined below to enable the Signal Sciences agent with your app. All languages and frameworks are supported.
+To enable the Signal Sciences agent with your app the `SIGSCI_ACCESSKEYID` and `SIGSCI_SECRETACCESSKEY` environment variables must be set. All languages and frameworks are supported.
 
-1. Ensure the `.enable_sigsci_decorator` file is present in the `$BUILD_DIR` of your app.
-   This is just an empty file.
-	* For Java-based apps, add the `.enable_sigsci_decorator` to your app JAR file. For example:
-
-    ```
-    ./gradlew clean assemble
-    touch .enable_sigsci_decorator
-    jar -uvf build/libs/spring-music.jar .enable_sigsci_decorator
-    ```
-
-1. Set the following environment variables of your app using `cf set-env`:
-	* **Required**
-		* Agent keys, which can be obtained from the *Agents* page in the [Signal Sciences Dashboard] (https://dashboard.signalsciences.net/) 
-			* `SIGSCI_ACCESSKEYID`
-			* `SIGSCI_SECRETACCESSKEY`
-	* **Optional**
+1. Set the agent keys environment variables of your app using `cf set-env`:
+	* Agent keys, which can be obtained from the *Agents* page in the [Signal Sciences Dashboard] (https://dashboard.signalsciences.net/) 
+		* `cf set-env MyAppName "SIGSCI_ACCESSKEYID" "1234-EXAMPLE"`
+		* `cf set-env MyAppName "SIGSCI_SECRETACCESSKEY" "ABCD-EXAMPLE"`
+	* **Optional Agent Configuration**
 		* `SIGSCI_SERVER_HOSTNAME` - Specify a specific hostname for each agent. This is what gets displayed in the Signal Sciences Dashboard UI, and it should be a unique name per instance.
 		* `SIGSCI_AGENT_VERSION` - By default the latest version of the Signal Sciences agent will be installed. To specify a different version set the `SIGSCI_AGENT_VERSION` environment variable to the desired version number.
 		* `SIGSCI_REQUIRED` - By default, if the Signal Sciences agent fails to start (e.g. invalid agent keys), this will not prevent the app from starting. To ensure your app is not started without Signal Sciences set `SIGSCI_REQUIRED` environment variable to `true`.
+		* For a complete list of agent configuration options, see the agent configuration documentation, [https://dashboard.signalsciences.net/documentation/installation/agent-configuration] (https://dashboard.signalsciences.net/documentation/installation/agent-configuration).
 
 1. Ensure your app process obtains its listening port from the `$PORT` environment variable.
 Typically, this does not require any changes to your app.
 
-For more information on agent configuration options, see the agent configuration documentation,
-[https://dashboard.signalsciences.net/documentation/installation/agent-configuration] (https://dashboard.signalsciences.net/documentation/installation/agent-configuration).
 
 ##<a id='use-dashboard'></a> Use the Signal Sciences Dashboard
 
