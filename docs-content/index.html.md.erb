@@ -32,8 +32,6 @@ PCF Operators [download](https://network.pivotal.io/) and install the Signal Sci
 
 ## <a id="snapshot"></a>Product Snapshot
 
-<p class='note'><strong>Note:</strong> As of PCF v2.0, Elastic Runtime is renamed Pivotal Application Service (PAS).</p>
-
 The following table provides version and version-support information about Signal Sciences Service Broker for PCF:
 
 <table class="nice">
@@ -60,10 +58,20 @@ The following table provides version and version-support information about Signa
         <td>v2.1.x, v2.2.x, v2.3.x, and v2.4.x</td>
     </tr>
     <tr>
+        <td>BOSH stemcell version</td>
+        <td>Ubuntu Xenial</td>
+    </tr>
+    <tr>
         <td>IaaS support</td>
         <td>AWS, GCP, vSphere, Azure, and OpenStack </td>
     </tr>
 </table>
+<p class="note warning"><strong> WARNING:</strong>
+Signal Sciences Service Broker for PCF v1.0.0
+and earlier require a Ubuntu Trusty stemcell.
+The end-of-life date for Ubuntu Trusty is April 2019.
+If a security vulnerability is found on this stemcell after April, it will not be fixed.</p>
+
 
 
 ## <a id="reqs"></a>Requirements
