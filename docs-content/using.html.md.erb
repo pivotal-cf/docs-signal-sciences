@@ -34,6 +34,9 @@ To enable the Signal Sciences agent with your app, the `SIGSCI_ACCESSKEYID` and 
 1. Ensure your app process obtains its listening port from the `$PORT` environment variable.
 Typically, this does not require any changes to your app.
 
+1. When deploying your app, you must include the Signal Sciences buildpack before the final buildpack. For example, if MyAppName is a go app:
+        * `cf push MyAppName -b sigsci_cloudfoundry_buildpack -b go_buildpack`
+
 
 ##<a id='use-dashboard'></a> Use the Signal Sciences Dashboard
 
